@@ -41,7 +41,13 @@ jobs:
         python -m pytest -s -v
     - name: Create Artifact
       run: |
-        echo "hello" | tee ./artifact_file.txt
+        echo hello | tee ./artifact_file.txt
+    - name: Save Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: my-artifact
+        path: ./artifact_file.txt
+
   Windows:
     runs-on: windows-latest
     strategy:
