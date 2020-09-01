@@ -6,7 +6,6 @@ name: Python package
 on:
   push:
     branches: [ master, some_branch]
-    branches: [ master, some_branch]
 #  schedule:
 #    - cron: '*/15 * * * *'
 
