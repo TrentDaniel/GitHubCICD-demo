@@ -39,6 +39,9 @@ jobs:
     - name: Run Tests
       run: |
         python -m pytest -s -v
+    - name: Create Artifact
+      run: |
+        echo "hello" | tee ./artifact_file.txt
   Windows:
     runs-on: windows-latest
     strategy:
