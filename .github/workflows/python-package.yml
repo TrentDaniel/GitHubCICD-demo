@@ -5,8 +5,9 @@ name: Python package
 
 on:
   push:
-    - branches: [ master, some_branch]
-    - 'README.md'
+    branches: [ master, some_branch]
+    paths:
+      - 'README.md'
   pull_request:
     branches: [master, some_branch]
 #  schedule:
