@@ -4,12 +4,12 @@
 name: Python package
 
 on:
-#  push:
-#    branches: [ master, some_branch]
-#  pull_request:
-#    branches: [master, some_branch]
-  schedule:
-    - cron: '*/5 * * * *'
+  push:
+    branches: [ master, some_branch]
+  pull_request:
+    branches: [master, some_branch]
+#  schedule:
+#    - cron: '*/5 * * * *'
 
 jobs:
   Linux:
