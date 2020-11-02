@@ -25,12 +25,14 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Create artifact
+    - name: Hello, World!
       run: |
-        echo "It's 1979" | tee ${GITHUB_WORKSPACE}/date.txt
-    - name: List artifacts
-      run: |
-
+        echo "Hello, World!"
+#    - name: Create artifact
+#      run: |
+#        echo "It's 1979" | tee ${GITHUB_WORKSPACE}/date.txt
+#    - name: List artifacts
+#      run: |
 #    - name: Check IP
 #      run: |
 #        hostname -I | awk '{print $1}'
@@ -69,11 +71,11 @@ jobs:
 #   - name: Create Artifact
 #      run: |
 #        echo hello | tee ./artifact_file.txt
-    - name: Save Artifact
-      uses: actions/upload-artifact@v2
-     with:
-        name: my-artifact
-        path: ./date.txt
+#    - name: Save Artifact
+#      uses: actions/upload-artifact@v2
+#      with:
+#        name: my-artifact
+#        path: ./date.txt
 #        path: ./artifact_file.txt
 
 #  Windows:
