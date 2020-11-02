@@ -5,7 +5,8 @@ name: Python package
 
 on:
   push:
-    branches: [ master, some_branch]
+    - branches: [ master, some_branch]
+    - 'README.md'
   pull_request:
     branches: [master, some_branch]
 #  schedule:
@@ -24,9 +25,15 @@ jobs:
       uses: actions/setup-python@v2
       with:
         python-version: ${{ matrix.python-version }}
-    - name: Check IP
+    - name: Create artifact
       run: |
-        hostname -I | awk '{print $1}'
+        echo "It's 1979" | tee ${GITHUB_WORKSPACE}/date.txt
+    - name: List artifacts
+      run: |
+
+#    - name: Check IP
+#      run: |
+#        hostname -I | awk '{print $1}'
 #    - name: Create cache file
 #      run: |
 #        mkdir check-SHA
@@ -62,10 +69,11 @@ jobs:
 #   - name: Create Artifact
 #      run: |
 #        echo hello | tee ./artifact_file.txt
-#    - name: Save Artifact
-#      uses: actions/upload-artifact@v2
-#     with:
-#        name: my-artifact
+    - name: Save Artifact
+      uses: actions/upload-artifact@v2
+     with:
+        name: my-artifact
+        path: ./date.txt
 #        path: ./artifact_file.txt
 
 #  Windows:
