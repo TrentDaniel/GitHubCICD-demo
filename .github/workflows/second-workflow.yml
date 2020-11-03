@@ -42,14 +42,14 @@ jobs:
       matrix:
         python-version: [3.6, 3.7]
         
-        steps:
-          - uses: actions/checkout@v2
-            with:
-              ref: some_branch
-          - name: Set up Python ${{ matrix.python-version }}
-            uses: actions/setup-python@v2
-            with:
-              python-version: ${{ matrix.python-version }}
-          - name: Hello, World!
-            run: |
-              python ./someScript.py
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          ref: some_branch
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v2
+        with:
+          python-version: ${{ matrix.python-version }}
+      - name: Hello, World!
+        run: |
+          python ./someScript.py
