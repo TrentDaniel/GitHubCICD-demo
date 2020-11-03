@@ -1,8 +1,10 @@
 name: Second Workflow
 
 on:
-  schedule:
-    - cron: '*/5 * * * *'
+  push:
+    branches: [master, some_branch]
+#  schedule:
+#    - cron: '*/5 * * * *'
 
 jobs:
   Linux-master:
